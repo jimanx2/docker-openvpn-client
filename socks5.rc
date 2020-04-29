@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+  
+name=socks5
+command="/usr/bin/ssh"
+command_args="-oStrictHostKeyChecking=no -D 0.0.0.0:1337 -N -C localhost "
+command_user="root"
+command_background="yes"
+pidfile="/run/socks5/socks5.pid"
+depend() {
+    need net
+}
+
+start_pre() {
+    checkpath --directory --owner $command_user:$command_user --mode 0775 \
+            /run/socks5
+}

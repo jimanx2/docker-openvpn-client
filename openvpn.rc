@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+  
+name=openvpn-client
+command="/usr/sbin/openvpn"
+command_args="--config /openvpn/remote.ovpn"
+command_user="root"
+command_background="yes"
+pidfile="/run/openvpn-client/openvpn-client.pid"
+depend() {
+        need net
+}
+
+start_pre() {
+        mkdir -p /dev/net
+       	mknod /dev/net/tun c 10 200
+        echo -e "nameserver 8.8.8.8 8.8.4.4" > /etc/resolv.conf
+        checkpath --directory --owner $command_user:$command_user --mode 0775 \
+                /run/openvpn-client
+}
