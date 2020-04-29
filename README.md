@@ -2,6 +2,8 @@ Your VPN is slow and you can't access outside world while in VPN?
 
 This is a docker container to isolate your VPN connection so you can freely have conference call and access your intranet at the same time.
 
+![sample screenshot](https://github.com/jimanx2/docker-openvpn-client/raw/master/screenshot.png)
+
 # Requirements
 
 1. You need docker engine installed
