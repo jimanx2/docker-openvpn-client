@@ -1,6 +1,6 @@
 FROM dockage/alpine:3.11-openrc
 
-RUN apk update && apk upgrade && apk add --no-cache openvpn dropbear openssh-client alpine-conf
+RUN apk update && apk upgrade && apk add --no-cache openvpn dropbear openssh-client expect
 
 COPY ./openvpn.rc /etc/init.d/openvpn-client
 COPY ./socks5.rc  /etc/init.d/socks5
