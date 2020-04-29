@@ -2,7 +2,7 @@
   
 name=openvpn-client
 command="/usr/sbin/openvpn"
-command_args="--config /openvpn/remote.ovpn"
+command_args="--config /openvpn/remote.ovpn 2>&1 > /var/log/openvpn-client.log"
 command_user="root"
 command_background="yes"
 pidfile="/run/openvpn-client/openvpn-client.pid"
