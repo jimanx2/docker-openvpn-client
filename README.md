@@ -10,7 +10,7 @@ This is a docker container to isolate your VPN connection so you can freely have
 
 # How to build & use
 
-1. edit target.ovpn to have same content as your .ovpn profile
+1. edit target.ovpn to have same content as your .ovpn profile, add this line: `askpass /openvpn/remote-pass.txt`
 2. edit target-pass.txt and put your ovpn passphrase
 3. build the container: `docker build -t <yourimagename> .`
 4. run the container: `docker run -d -p 1337:1337 --restart=always --name=vpnclient --cap-add NET_ADMIN <yourimagename>`
