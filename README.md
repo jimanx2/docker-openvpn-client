@@ -24,3 +24,5 @@ This is a docker container to isolate your VPN connection so you can freely have
 
 1. Q: What if my VPN have timeout disconnect? A: just run `docker restart vpnclient` to reconnect
 2. Q: What if my my VPN use username/password/mfa? A: you can modify `openvpn.rc` script to use `expect` script
+3. Q: How to use Git with this proxy? A: `git config http.proxy 'socks5://127.0.0.1:1337'`
+4. Q: What about terminal? ssh? A: use [tsocks](https://sourceforge.net/projects/tsocks/) `tsocks ssh myinternalhost`
