@@ -2,6 +2,8 @@ Your VPN is slow and you can't access outside world while in VPN?
 
 This is a docker container to isolate your VPN connection so you can freely have conference call and access your intranet at the same time.
 
+![sample screenshot](https://github.com/jimanx2/docker-openvpn-client/raw/master/screenshot.png)
+
 # Requirements
 
 1. You need docker engine installed
@@ -21,4 +23,6 @@ This is a docker container to isolate your VPN connection so you can freely have
 # FAQ
 
 1. Q: What if my VPN have timeout disconnect? A: just run `docker restart vpnclient` to reconnect
-2. Q: What if my my VPN use username/password/mfa? A: you can modify `openvpn.rc` script to use `expect` script
+2. Q: What if my my VPN use username/password/mfa? A: you can modify `openvpn.rc` script to use [expect](https://linux.die.net/man/1/expect) script
+3. Q: How to use Git with this proxy? A: `git config http.proxy 'socks5://127.0.0.1:1337'`
+4. Q: What about terminal? ssh? A: use [tsocks](https://sourceforge.net/projects/tsocks/) `tsocks ssh myinternalhost`
