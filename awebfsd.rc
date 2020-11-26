@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+  
+name=awebfsd
+command="/usr/local/bin/webfsd"
+command_args="-i 0.0.0.0 -F -p 1338 -R /var/www"
+command_user="root"
+command_background="yes"
+pidfile="/run/webfs.pid"
+
+depend() {
+    need net
+}
