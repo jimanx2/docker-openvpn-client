@@ -15,7 +15,8 @@ This is a docker container to isolate your VPN connection so you can freely have
 1. edit target.ovpn to have same content as your .ovpn profile, add this line: `askpass /openvpn/remote-pass.txt`
 2. edit target-pass.txt and put your ovpn passphrase
 3. build the container: `docker build -t <yourimagename> .`
-4. run the container: `docker run -d -p 1337:1337 --restart=always --name=vpnclient --cap-add NET_ADMIN <yourimagename>`
+4. run the container: `docker run -d -p 1337:1337 -p 1338:1338 --restart=always --name=vpnclient --cap-add NET_ADMIN <yourimagename>`
+4.1 edit public/autoproxy.pac and specify which domain you want to go through the VPN
 5. set your browser proxy (&bull;) to SOCKS5: `localhost:1337`
 6. open your browser and try to visit your intranet
 * i recommend firefox for this as it does not modify system proxy
